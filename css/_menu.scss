@@ -1,0 +1,232 @@
+$firstcolor: #00a5c1;
+$secondcolor: #fff;
+$thirdcolor: rgb(185, 239, 248);
+
+@mixin bar($color1, $color2) {
+    display: flex;
+    background-color: $color1;
+    color: $color2;
+    justify-content: space-between;
+    padding: 15px 5%;
+    z-index: 99999;
+    transition: all 0.5s;
+
+    @media (min-width: 1440px) {
+        padding: 15px 10%;
+    }
+
+    @media (min-width: 2560px) {
+        padding: 15px 15%;
+    }
+}
+
+
+.bar {
+    @include bar($secondcolor, $firstcolor);
+
+    h1 {
+        display: inline-block;
+        font-size: 1.6em;
+        padding-left: 2px;
+    }
+
+    .bar__title {
+        text-decoration: none;
+        color: $firstcolor;
+        transition: all 0.5s;
+    }
+
+    .bar__title--fixed {
+        color: $secondcolor;
+        text-decoration: none;
+        transition: all 0.5s;
+    }
+
+    i {
+        font-size: 1.6em;
+    }
+
+    .nav__toggler {
+        width: 35px;
+        height: 35px;
+        border: none;
+        background-color: rgba(255, 255, 255, 0);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        transition: opacity 0.5s ease-in-out;
+
+        @media (min-width: 1024px) {
+            display: none;
+        }
+
+        span {
+            height: 3px;
+            width: 24px;
+            background-color: $firstcolor;
+            position: relative;
+            transition: all 0.3s ease;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: $firstcolor;
+                transition: all 0.3s ease;
+            }
+
+            &::before {
+                left: 0;
+                transform: translateY(-8px);
+            }
+
+            &::after {
+                right: 0;
+                transform: translateY(8px);
+            }
+        }
+    }
+
+    .nav__toggler.active {
+
+        span {
+            background-color: transparent;
+
+            &::before {
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    .bar__menu {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        width: 100%;
+        top: 65px;
+        left: 0;
+        transition: all 0.5s;
+        z-index: 9999;
+
+        @media (min-width: 1024px) {
+            position: static;
+            visibility: visible;
+            opacity: 1;
+            width: 70%;
+        }
+
+        ul {
+            list-style: none;
+            background: $secondcolor;
+            transition: all 0.5s;
+
+            @media (min-width: 1024px) {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                background: rgba(185, 239, 248, 0);
+            }
+
+            a {
+                text-decoration: none;
+                color: $firstcolor;
+                font-size: 1.2em;
+                font-weight: 600;
+
+                @media (min-width: 1024px) {
+                    margin: 0 15px;
+                }
+
+                &:hover {
+
+                    li {
+                        background-color: $firstcolor;
+                    }
+                }
+
+                li {
+                    text-align: center;
+                    padding: 20px 0px;
+                    border-top: 1px solid $thirdcolor;
+                    transition: all 0.5s;
+
+                    @media (min-width: 1024px) {
+                        border-top: 0;
+                        padding: 2.5px 10px 5px;
+                        border-radius: 5px;
+                    }
+
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .bar__menu--show {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.bar--fixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: $firstcolor;
+    color: $secondcolor;
+    transition: all 0.5s;
+
+    .nav__toggler {
+
+        span {
+            background-color: $secondcolor;
+
+            &::before,
+            &::after {
+                background-color: $secondcolor;
+            }
+        }
+    }
+
+    .bar__menu {
+        ul {
+            a {
+
+                @media (min-width: 1024px) {
+                    &:hover {
+
+                        li {
+                            background-color: $secondcolor;
+                        }
+                    }
+                }
+
+                li {
+
+                    color: $firstcolor;
+
+                    @media (min-width: 1024px) {
+
+                        color: $secondcolor;
+
+                        &:hover {
+                            color: $firstcolor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
