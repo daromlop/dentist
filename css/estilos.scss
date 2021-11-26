@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap');
+@import "slider";
+@import "menu";
+@import "3dsection";
+@import "botones";
+@import "equipo";
+@import "porqueele";
+@import "contact";
+@import "nuestrospro";
+
+$firstcolor: #00a5c1;
+$secondcolor: #ffff;
+$thirdcolor: rgb(185, 239, 248);
+$fourthcolor: #026475;
+$mainfont: 'Open Sans',
+sans-serif;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $mainfont;
+}
+
+.container__content {
+    width: 90%;
+    margin: 50px auto;
+
+    @media (min-width: 1024px) {
+        width: 70%;
+    }
+
+    @media (min-width: 1440px) {
+        width: 60%;
+    }
+
+    @media (min-width: 2560px) {
+        width: 50%;
+    }
+}
+
+/* Footer */
+
+footer {
+    background-color: $firstcolor;
+
+    .container__content {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        color: #fff;
+        padding: 20px 0px;
+
+        @media (min-width: 1024px) {
+            flex-direction: row;
+        }
+
+        @media (min-width: 1440px) {
+            width: 80%;
+        }
+
+        @media (min-width: 2560px) {
+            width: 70%;
+        }
+
+        .social {
+            font-size: 2em;
+
+            @media (min-width: 1024px) {
+                width: 33%;
+                text-align: center;
+            }
+
+            @media (min-width: 1440px) {
+                text-align: left;
+            }
+
+            i {
+                margin: 0 3px;
+                cursor: pointer;
+            }
+        }
+
+        .copyright {
+            margin: 20px auto 0px;
+            width: 80%;
+            font-size: 1em;
+            font-weight: 600;
+
+            @media (min-width: 1024px) {
+                width: 33%;
+                margin: 10px auto 0px;
+                text-align: center;
+            }
+
+
+            p {
+                margin-bottom: 2px;
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .politicas {
+            color: $secondcolor;
+            font-size: 0.7em;
+
+            @media (min-width: 1024px) {
+                width: 33%;
+                margin-top: 12.5px;
+                text-align: right;
+            }
+
+            a {
+                color: $secondcolor;
+                text-decoration: none;
+            }
+        }
+    }
+}
