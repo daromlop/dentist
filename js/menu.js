@@ -39,5 +39,3 @@ mainNav.addEventListener('click', function(){
 button.classList.toggle('active');
 mainNav.classList.remove('bar__menu--show');
 });
-
-console.log(window.pageYOffset);
