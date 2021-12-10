@@ -36,6 +36,10 @@ button.classList.toggle('active');
 });
 
 mainNav.addEventListener('click', function(){
+if (media.matches) { 
+
+} else {
 button.classList.toggle('active');
 mainNav.classList.remove('bar__menu--show');
+};
 });
