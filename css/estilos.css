@@ -995,8 +995,8 @@
   border-radius: 125px;
   background: #00a5c1;
   margin: 30px auto 10px;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
 }
 
 #nuestrosprofesionales .container ul .equimg .iconback img {
@@ -1155,26 +1155,42 @@ footer .container__content .social i {
   cursor: pointer;
 }
 
-footer .container__content .copyright {
-  margin: 20px auto 0px;
+footer .container__content .lcc {
+  margin: 10px auto 10px;
   width: 80%;
   font-size: 1em;
   font-weight: 600;
 }
 
 @media (min-width: 1024px) {
-  footer .container__content .copyright {
+  footer .container__content .lcc {
     width: 33%;
     margin: 10px auto 0px;
     text-align: center;
   }
 }
 
-footer .container__content .copyright p {
-  margin-bottom: 2px;
+@media (min-width: 1060px) {
+  footer .container__content .lcc {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
-footer .container__content .copyright p a {
+footer .container__content .lcc p {
+  margin-bottom: 10px;
+}
+
+@media (min-width: 1060px) {
+  footer .container__content .lcc p {
+    margin-right: 10px;
+    margin-top: 2.5px;
+    margin-bottom: 0px;
+  }
+}
+
+footer .container__content .lcc p a {
   color: #fff;
   text-decoration: none;
 }
